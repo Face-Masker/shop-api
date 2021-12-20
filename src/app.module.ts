@@ -3,14 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ArticleModule } from './article/article.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule } from '@nestjs/config';
+//import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      envFilePath: ['.env.development.local'],
-    }),
-    MongooseModule.forRoot(process.env.MONGO_URI, { useFindAndModify: false }),
+    MongooseModule.forRoot("mongodb+srv://Pradeep:Hacker8096@cluster0.2ixgm.mongodb.net/NodeTest?retryWrites=true&w=majority"),
     ArticleModule,
   ],
   controllers: [AppController],
